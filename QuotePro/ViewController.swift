@@ -10,7 +10,9 @@ import UIKit
 
 class ViewController: UIViewController
 {
+    //MARK: - Properties
     @IBOutlet weak var tableView: UITableView!
+    var quoteArray = [Quote]()
 
     override func viewDidLoad()
     {
@@ -18,6 +20,13 @@ class ViewController: UIViewController
         // Do any additional setup after loading the view, typically from a nib.
         
         tableView.dataSource = self
+        
+        let newHandler = APIHandler()
+        newHandler.APISetup(completion: { result in
+            print(result)
+        
+        })
+        
     }
 
     override func didReceiveMemoryWarning()
@@ -29,23 +38,24 @@ class ViewController: UIViewController
 
 }
 
-//MARK: ViewController Data Source
+//MARK: - ViewController Data Source
 extension ViewController: UITableViewDataSource
 {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return 1
+        return quoteArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! QuoteTableViewCell
+        cell.quoteLabel.text = quoteArray[indexPath.row].quoteText
         
         return cell
     }
 }
 
-//MARK: ViewController Delegate
+//MARK: - ViewController Delegate
 extension ViewController: UITableViewDelegate
 {
 //    func prepare(for segue: UIStoryboardSegue, sender: Any?)

@@ -10,7 +10,7 @@ import UIKit
 
 class APIHandler: NSObject
 {
-    func APISetup(url: URL, completion: @escaping (NSDictionary) -> Void)
+    func APISetup(completion: @escaping (NSDictionary) -> Void)
     {
         let urlString = URL(string: "http://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=json")!
         let config = URLSessionConfiguration.default
@@ -40,11 +40,12 @@ class APIHandler: NSObject
         task.resume()
     }
     
-    func getImage(url: URL, completion: @escaping (Data) -> Void)
+    func getImage(completion: @escaping (Data) -> Void)
     {
+        let imgURLString = URL(string: "http://lorempixel.com/400/600/nature/")!
         let session = URLSession(configuration: URLSessionConfiguration.default)
         
-        let task = session.dataTask(with: url)
+        let task = session.dataTask(with: imgURLString)
         { (data, response, error) in
             if (error != nil)
             {
