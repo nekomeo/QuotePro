@@ -44,3 +44,20 @@ extension ViewController: UITableViewDataSource
         return cell
     }
 }
+
+//MARK: ViewController Delegate
+extension ViewController: UITableViewDelegate
+{
+//    func prepare(for segue: UIStoryboardSegue, sender: Any?)
+//    {
+//        if segue.identifier == "toQuote"
+//        {
+//            if let quoteVC = segue.destination as?
+//        }
+//    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+        self.performSegue(withIdentifier: "toQuote", sender: self)
+    }
+}

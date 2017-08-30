@@ -14,6 +14,8 @@
 		6AAEA7C11F574D7200E8F37E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AAEA7BF1F574D7200E8F37E /* LaunchScreen.storyboard */; };
 		6AAEA7C91F574FBF00E8F37E /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAEA7C81F574FBF00E8F37E /* Quote.swift */; };
 		6AAEA7CB1F574FC900E8F37E /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAEA7CA1F574FC900E8F37E /* Photo.swift */; };
+		6AAEA7CD1F57522F00E8F37E /* QuoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAEA7CC1F57522F00E8F37E /* QuoteViewController.swift */; };
+		6AAEA7CF1F5760BB00E8F37E /* APIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAEA7CE1F5760BB00E8F37E /* APIHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		6AAEA7C21F574D7200E8F37E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6AAEA7C81F574FBF00E8F37E /* Quote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
 		6AAEA7CA1F574FC900E8F37E /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		6AAEA7CC1F57522F00E8F37E /* QuoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuoteViewController.swift; sourceTree = "<group>"; };
+		6AAEA7CE1F5760BB00E8F37E /* APIHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +64,10 @@
 			children = (
 				6AAEA7B61F574D7200E8F37E /* AppDelegate.swift */,
 				6AAEA7B81F574D7200E8F37E /* ViewController.swift */,
+				6AAEA7CC1F57522F00E8F37E /* QuoteViewController.swift */,
 				6AAEA7C81F574FBF00E8F37E /* Quote.swift */,
 				6AAEA7CA1F574FC900E8F37E /* Photo.swift */,
+				6AAEA7CE1F5760BB00E8F37E /* APIHandler.swift */,
 				6AAEA7BA1F574D7200E8F37E /* Main.storyboard */,
 				6AAEA7BD1F574D7200E8F37E /* Assets.xcassets */,
 				6AAEA7BF1F574D7200E8F37E /* LaunchScreen.storyboard */,
@@ -145,7 +151,9 @@
 				6AAEA7CB1F574FC900E8F37E /* Photo.swift in Sources */,
 				6AAEA7B91F574D7200E8F37E /* ViewController.swift in Sources */,
 				6AAEA7C91F574FBF00E8F37E /* Quote.swift in Sources */,
+				6AAEA7CF1F5760BB00E8F37E /* APIHandler.swift in Sources */,
 				6AAEA7B71F574D7200E8F37E /* AppDelegate.swift in Sources */,
+				6AAEA7CD1F57522F00E8F37E /* QuoteViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

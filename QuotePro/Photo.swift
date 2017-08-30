@@ -8,6 +8,12 @@
 
 import UIKit
 
-class Photo: NSObject {
-
+class Photo: NSObject
+{
+    let quoteImage: UIImage
+    
+    init(quoteImage: UIImage)
+    {
+        self.quoteImage = quoteImage
+    }
 }
