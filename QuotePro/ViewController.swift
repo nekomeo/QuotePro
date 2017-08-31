@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ViewController: UIViewController
 {
@@ -22,6 +23,22 @@ class ViewController: UIViewController
         tableView.dataSource = self
         tableView.delegate = self
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        do
+        {
+            let realm = try Realm()
+            self.quoteArray = realm.objects(Quote).toArray()
+            
+            DispatchQueue.main.async
+            {
+                self.tableView.reloadData()
+            }
+        }
+        catch _
+        {}
     }
     
 
@@ -62,5 +79,18 @@ extension ViewController: UITableViewDelegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
         self.performSegue(withIdentifier: "toQuote", sender: self)
+    }
+}
+extension Results {
+    
+    func toArray() -> [T] {
+        return self.map{$0}
+    }
+}
+
+extension RealmSwift.List {
+    
+    func toArray() -> [T] {
+        return self.map{$0}
     }
 }

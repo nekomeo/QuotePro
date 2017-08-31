@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class QuoteViewController: UIViewController
 {
@@ -58,6 +59,7 @@ class QuoteViewController: UIViewController
 //            print(result)
             let dictionary = result
             let newQuote = Quote(quoteText: dictionary.value(forKey: "quoteText") as! String, quoteAuthor: dictionary.value(forKey: "quoteAuthor") as! String)
+            self.quote = newQuote
             self.quoteArray.append(newQuote)
             
             DispatchQueue.main.async
@@ -85,7 +87,10 @@ class QuoteViewController: UIViewController
     
     @IBAction func save(_ sender: UIButton)
     {
-        //
+        let realm = try! Realm()
+        try! realm.write {
+            realm.add(quote!)
+        }
     }
     
     @IBAction func randomImage(_ sender: UIButton)

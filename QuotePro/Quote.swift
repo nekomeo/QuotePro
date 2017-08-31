@@ -7,14 +7,17 @@
 //
 
 import UIKit
+import RealmSwift
+import Realm
 
-class Quote: NSObject
+class Quote: Object
 {
-    var quoteText: String
-    var quoteAuthor: String
+    dynamic var quoteText = ""
+    dynamic var quoteAuthor = ""
     
-    init(quoteText: String, quoteAuthor: String)
+    convenience init(quoteText: String, quoteAuthor: String)
     {
+        self.init()
         self.quoteText = quoteText
         self.quoteAuthor = quoteAuthor
     }
