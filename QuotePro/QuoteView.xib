@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="QuoteView" customModule="QuotePro" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gVw-Bs-wRw">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quote" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y9M-RO-7ge">
+                    <rect key="frame" x="8" y="78" width="359" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tIn-6b-5AZ">
+                    <rect key="frame" x="8" y="129" width="359" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="gVw-Bs-wRw" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="5n7-r2-bJa"/>
+                <constraint firstItem="tIn-6b-5AZ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" id="8U3-qp-HVv"/>
+                <constraint firstItem="Y9M-RO-7ge" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="topMargin" constant="70" id="FPE-gw-p6y"/>
+                <constraint firstItem="Y9M-RO-7ge" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" id="Gxd-QM-aYe"/>
+                <constraint firstAttribute="trailing" secondItem="gVw-Bs-wRw" secondAttribute="trailing" id="OOK-Rb-coW"/>
+                <constraint firstAttribute="trailingMargin" secondItem="Y9M-RO-7ge" secondAttribute="trailing" id="b5b-fs-7Ej"/>
+                <constraint firstAttribute="trailingMargin" secondItem="tIn-6b-5AZ" secondAttribute="trailing" id="biu-fF-aBO"/>
+                <constraint firstItem="gVw-Bs-wRw" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="dAr-Zw-o2b"/>
+                <constraint firstAttribute="bottom" secondItem="gVw-Bs-wRw" secondAttribute="bottom" id="qaU-wa-Zd2"/>
+                <constraint firstItem="tIn-6b-5AZ" firstAttribute="top" secondItem="Y9M-RO-7ge" secondAttribute="bottom" constant="30" id="xRN-ie-KbY"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="authorLabel" destination="tIn-6b-5AZ" id="UOj-Ia-HaU"/>
+                <outlet property="image" destination="gVw-Bs-wRw" id="T7D-9Y-Kyi"/>
+                <outlet property="quoteLabel" destination="Y9M-RO-7ge" id="2Rd-rv-DuY"/>
+            </connections>
+        </view>
+    </objects>
+</document>

@@ -43,7 +43,7 @@ class APIHandler: NSObject
     
     func getImage(completion: @escaping (Data) -> Void)
     {
-        let imgURLString = URL(string: "http://lorempixel.com/400/600/nature/")!
+        let imgURLString = URL(string: "https://lorempixel.com/400/600/nature/")!
         let session = URLSession(configuration: URLSessionConfiguration.default)
         
         let task = session.dataTask(with: imgURLString)

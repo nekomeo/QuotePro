@@ -7,7 +7,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -34,7 +33,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SgY-xM-JrT">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SgY-xM-JrT">
                                                     <rect key="frame" x="8" y="8" width="259" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -73,11 +72,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="9bL-G7-fYu">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="5GN-xb-gHa"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="5GN-xb-gHa">
+                            <connections>
+                                <segue destination="Ntg-ij-iST" kind="show" identifier="toQuote" id="Wyn-jC-dX9"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="9LT-Y2-yV7" id="UvP-ho-VKl"/>
-                        <segue destination="Ntg-ij-iST" kind="show" identifier="toQuote" id="PgY-68-5BU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -96,51 +98,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GuW-xg-5V9">
-                                <rect key="frame" x="0.0" y="64" width="375" height="557"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="557" id="87X-Wu-2DD"/>
-                                </constraints>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WqZ-Dl-Vpy">
-                                <rect key="frame" x="6" y="629" width="103" height="30"/>
+                                <rect key="frame" x="8" y="629" width="103" height="30"/>
                                 <state key="normal" title="Random Quote"/>
+                                <connections>
+                                    <action selector="randomQuote:" destination="Ntg-ij-iST" eventType="touchUpInside" id="2U1-25-Yc6"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D7Z-bA-4s0">
                                 <rect key="frame" x="264" y="629" width="103" height="30"/>
                                 <state key="normal" title="Random Image"/>
+                                <connections>
+                                    <action selector="randomImage:" destination="Ntg-ij-iST" eventType="touchUpInside" id="Zqe-aS-Ksm"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WH5-gx-XgG">
-                                <rect key="frame" x="170.5" y="629" width="34" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="40f-nK-oBx">
+                                <rect key="frame" x="170" y="629" width="34" height="30"/>
                                 <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="save:" destination="Ntg-ij-iST" eventType="touchUpInside" id="0wq-p3-z36"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6cz-Mi-YmT">
-                                <rect key="frame" x="26" y="84" width="323" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="WH5-gx-XgG" firstAttribute="centerX" secondItem="3Ef-vx-Hyy" secondAttribute="centerX" id="1ru-st-46G"/>
-                            <constraint firstItem="GuW-xg-5V9" firstAttribute="top" secondItem="SqH-4i-AbP" secondAttribute="bottom" id="3JK-gC-LaF"/>
-                            <constraint firstItem="6cz-Mi-YmT" firstAttribute="leading" secondItem="3Ef-vx-Hyy" secondAttribute="leadingMargin" constant="10" id="Lla-PL-FpO"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="6cz-Mi-YmT" secondAttribute="trailing" constant="10" id="Msi-dg-YaX"/>
-                            <constraint firstItem="GuW-xg-5V9" firstAttribute="leading" secondItem="3Ef-vx-Hyy" secondAttribute="leading" id="R0X-aE-H0X"/>
-                            <constraint firstItem="WH5-gx-XgG" firstAttribute="top" secondItem="GuW-xg-5V9" secondAttribute="bottom" constant="8" symbolic="YES" id="UXX-i6-Dvg"/>
-                            <constraint firstItem="6cz-Mi-YmT" firstAttribute="top" secondItem="SqH-4i-AbP" secondAttribute="bottom" constant="20" id="VcF-T6-Oaw"/>
-                            <constraint firstItem="WqZ-Dl-Vpy" firstAttribute="top" secondItem="GuW-xg-5V9" secondAttribute="bottom" constant="8" symbolic="YES" id="Xil-e0-p1z"/>
-                            <constraint firstAttribute="trailing" secondItem="GuW-xg-5V9" secondAttribute="trailing" id="Xv8-vB-Z3l"/>
-                            <constraint firstItem="D7Z-bA-4s0" firstAttribute="top" secondItem="GuW-xg-5V9" secondAttribute="bottom" constant="8" symbolic="YES" id="bkA-EK-V5q"/>
-                            <constraint firstAttribute="trailing" secondItem="D7Z-bA-4s0" secondAttribute="trailing" constant="8" id="czM-XF-6z2"/>
-                            <constraint firstItem="WqZ-Dl-Vpy" firstAttribute="leading" secondItem="3Ef-vx-Hyy" secondAttribute="leading" constant="6" id="zki-bh-8LL"/>
+                            <constraint firstItem="WqZ-Dl-Vpy" firstAttribute="leading" secondItem="3Ef-vx-Hyy" secondAttribute="leading" constant="8" id="DqI-Gq-Kow"/>
+                            <constraint firstItem="Ua7-01-UH5" firstAttribute="top" secondItem="40f-nK-oBx" secondAttribute="bottom" constant="8" id="Yqx-vA-lJR"/>
+                            <constraint firstItem="D7Z-bA-4s0" firstAttribute="leading" secondItem="40f-nK-oBx" secondAttribute="trailing" constant="60" id="eEg-gh-KCK"/>
+                            <constraint firstAttribute="trailing" secondItem="D7Z-bA-4s0" secondAttribute="trailing" constant="8" id="p1n-FA-dnU"/>
+                            <constraint firstItem="Ua7-01-UH5" firstAttribute="top" secondItem="D7Z-bA-4s0" secondAttribute="bottom" constant="8" id="s6Q-24-gbB"/>
+                            <constraint firstItem="Ua7-01-UH5" firstAttribute="top" secondItem="WqZ-Dl-Vpy" secondAttribute="bottom" constant="8" id="ynO-9g-Fce"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="randomImageButton" destination="D7Z-bA-4s0" id="1f3-y5-kWg"/>
+                        <outlet property="randomQuoteButton" destination="WqZ-Dl-Vpy" id="Kb7-b0-SWw"/>
+                        <outlet property="saveButton" destination="40f-nK-oBx" id="93x-xi-A2z"/>
+                        <outlet property="thisView" destination="3Ef-vx-Hyy" id="Uad-0W-MQd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kyl-7W-QAu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1776.8" y="138.98050974512745"/>
+            <point key="canvasLocation" x="1838" y="139"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="b3A-0Z-6s0">

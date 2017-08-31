@@ -22,20 +22,12 @@ class ViewController: UIViewController
         tableView.dataSource = self
         tableView.delegate = self
         
-        let newHandler = APIHandler()
-        newHandler.APISetup(completion: { result in
-            print(result)
-            let dictionary = result
-            let newQuote = Quote(quoteText: dictionary.value(forKey: "quoteText") as! String, quoteAuthor: dictionary.value(forKey: "quoteAuthor") as! String)
-            self.quoteArray.append(newQuote)
-            
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
+      //  let quoteView = Bundle.main.loadNibNamed("QuoteView", owner: nil, options: nil).first! as! QuoteView!
         
-        })
+        
         
     }
+    
 
     override func didReceiveMemoryWarning()
     {
