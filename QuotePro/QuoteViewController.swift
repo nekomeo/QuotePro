@@ -29,9 +29,7 @@ class QuoteViewController: UIViewController
         quoteView.translatesAutoresizingMaskIntoConstraints = false
         
         self.thisView.addSubview(quoteView)
-        //add constraints here
         quoteViewConstraints()
-        
         
         grabQuote()
         grabImage()
@@ -64,8 +62,6 @@ class QuoteViewController: UIViewController
             
             DispatchQueue.main.async
             {
-//                self.quote.reloadData()
-//                quoteView.setupWithQuote(quote: quote)
                 self.quoteView.setupWithQuote(quote: newQuote)
             }
             

@@ -22,10 +22,6 @@ class ViewController: UIViewController
         tableView.dataSource = self
         tableView.delegate = self
         
-      //  let quoteView = Bundle.main.loadNibNamed("QuoteView", owner: nil, options: nil).first! as! QuoteView!
-        
-        
-        
     }
     
 
@@ -58,13 +54,10 @@ extension ViewController: UITableViewDataSource
 //MARK: - ViewController Delegate
 extension ViewController: UITableViewDelegate
 {
-//    func prepare(for segue: UIStoryboardSegue, sender: Any?)
-//    {
-//        if segue.identifier == "toQuote"
-//        {
-//            if let quoteVC = segue.destination as?
-//        }
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        
+    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
