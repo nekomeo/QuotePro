@@ -20,10 +20,18 @@ class ViewController: UIViewController
         // Do any additional setup after loading the view, typically from a nib.
         
         tableView.dataSource = self
+        tableView.delegate = self
         
         let newHandler = APIHandler()
         newHandler.APISetup(completion: { result in
             print(result)
+            let dictionary = result
+            let newQuote = Quote(quoteText: dictionary.value(forKey: "quoteText") as! String, quoteAuthor: dictionary.value(forKey: "quoteAuthor") as! String)
+            self.quoteArray.append(newQuote)
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
         
         })
         

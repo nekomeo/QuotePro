@@ -28,7 +28,8 @@ class APIHandler: NSObject
                 {
                     if let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? [String: Any]
                     {
-                        print(json)
+                        completion(json as NSDictionary)
+//                        print(json)
                     }
                 }
                 catch
